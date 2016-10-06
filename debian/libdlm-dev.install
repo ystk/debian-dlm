@@ -1,0 +1,5 @@
+usr/include/libdlm.h
+usr/lib/*/libdlm.so
+usr/lib/*/libdlm_lt.so
+usr/lib/*/pkgconfig
+usr/share/man/man3

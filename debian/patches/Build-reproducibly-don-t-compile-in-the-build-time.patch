@@ -1,0 +1,39 @@
+From: =?utf-8?q?Ferenc_W=C3=A1gner?= <wferi@niif.hu>
+Date: Mon, 1 Feb 2016 18:18:52 +0100
+Subject: Build reproducibly: don't compile in the build time
+
+---
+ dlm_controld/main.c | 5 ++---
+ dlm_tool/main.c     | 3 +--
+ 2 files changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/dlm_controld/main.c b/dlm_controld/main.c
+index 13b3834..4f4b1e7 100644
+--- a/dlm_controld/main.c
++++ b/dlm_controld/main.c
+@@ -1431,9 +1431,8 @@ static void set_opt_cli(int argc, char **argv)
+ 	}
+ 
+ 	if (!strcmp(arg1, "version") || !strcmp(arg1, "--version") || !strcmp(arg1, "-V")) {
+-		printf("dlm_controld %s (built %s %s)\n",
+-			RELEASE_VERSION, __DATE__, __TIME__);
+-			printf("%s\n", REDHAT_COPYRIGHT);
++		printf("dlm_controld %s\n", RELEASE_VERSION);
++		printf("%s\n", REDHAT_COPYRIGHT);
+ 		exit(EXIT_SUCCESS);
+ 	}
+ 
+diff --git a/dlm_tool/main.c b/dlm_tool/main.c
+index 042caa9..2570af1 100644
+--- a/dlm_tool/main.c
++++ b/dlm_tool/main.c
+@@ -256,8 +256,7 @@ static void decode_arguments(int argc, char **argv)
+ 			break;
+ 
+ 		case 'V':
+-			printf("%s %s (built %s %s)\n",
+-				prog_name, RELEASE_VERSION, __DATE__, __TIME__);
++			printf("%s %s\n", prog_name, RELEASE_VERSION);
+ 			printf("%s\n", REDHAT_COPYRIGHT);
+ 			exit(EXIT_SUCCESS);
+ 			break;

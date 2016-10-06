@@ -1,0 +1,66 @@
+dlm (4.0.6-1) unstable; urgency=medium
+
+  * [3805ad8] New upstream release (4.0.6)
+
+ -- Ferenc Wágner <wferi@niif.hu>  Fri, 24 Jun 2016 12:54:01 +0200
+
+dlm (4.0.5-1) unstable; urgency=medium
+
+  * [9945090] Imported Upstream version 4.0.5
+    - Fix for the fencing error I introduced in 4.0.4.
+  * [745d5fe] Update Standards-Version to 3.9.8 (no changes needed)
+  * [97c2659] New patch Enable-systemctl-help-dlm-to-show-relevant-man-
+    pages.patch
+  * [8b8406a] Automatic debug packages got rid of our overridden Lintian tag
+
+ -- Ferenc Wágner <wferi@niif.hu>  Wed, 27 Apr 2016 12:16:53 +0200
+
+dlm (4.0.4-3) unstable; urgency=medium
+
+  * [526167a] Add corosync dependency to dlm-controld (Closes: #814519)
+  * [3c98ecb] Update Standards-Version to 3.9.7 (no changes needed)
+
+ -- Ferenc Wágner <wferi@niif.hu>  Fri, 12 Feb 2016 15:11:37 +0100
+
+dlm (4.0.4-2) unstable; urgency=medium
+
+  * [a10e0c9] New patch Build-reproducibly-don-t-compile-in-the-build-time.patch
+  * [dda5591] Replace obsolete libsystemd-daemon-dev B-D with libsystemd-dev
+    (Closes: #813376)
+  * [12b55a9] Switch to secure VCS URIs as Lintian suggests
+  * [562bd20] New patch Enable-bindnow-for-libdlmcontrol.patch
+
+ -- Ferenc Wágner <wferi@niif.hu>  Tue, 02 Feb 2016 11:35:06 +0100
+
+dlm (4.0.4-1) unstable; urgency=medium
+
+  * [0c99a79] Imported Upstream version 4.0.4
+  * [619a537] Avoid useless libxml2 dependency of dlm-controld
+  * [203aa46] debian/watch: look for tar.xz instead of tar.gz
+  * [0ce96d5] Delete upstreamed patches, update the remaining one
+  * [6a30ac3] Upstream udev dir is under /usr/lib since 102d3c2
+  * [d655c87] Taking over dlm_{controld,tool} requires Breaks+Replaces cman
+    (Closes: #812419)
+  * [a7b3406] Hardening seems to work now, enable it
+
+ -- Ferenc Wágner <wferi@niif.hu>  Sat, 23 Jan 2016 21:21:28 +0100
+
+dlm (4.0.2-1) unstable; urgency=medium
+
+  [ Ferenc Wágner ]
+  * [eb5910d] Switch to the new DLM upstream from redhat-cluster and redo
+    packaging
+  * [1bdc449] Add symbols file for libdlmcontrol3
+  * [ce903ed] Force building with Corosync 2 libraries
+  * [f0cc3b2] Build and ship the dlm_stonith helper
+  * [03ccd41] New patch Make-systemd-stop-dlm-on-corosync-restart.patch
+  * [3127527] New patch If-an-error-occurs-unlink-the-lock-file-and-exit-
+    wit.patch
+  * [05e959e] New patch Don-t-SIGKILL-dlm_controld.patch
+  * [61adabd] Ensure configfs is loaded before sys-kernel-config.mount needs it
+
+  [ Christoph Berg ]
+  * Rely on dh for -dbgsym packages instead of providing our own.
+  * Add watch file.
+
+ -- Christoph Berg <myon@debian.org>  Mon, 04 Jan 2016 23:38:06 +0100
